@@ -8,6 +8,6 @@ type user struct {
 }
 
 func main() {
-	u := user{name: "joao", age: 27}
+	u := user{"joao", 27}
 	fmt.Printf("%#v", u)
 }
