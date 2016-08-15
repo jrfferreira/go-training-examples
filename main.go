@@ -2,11 +2,9 @@ package main
 
 import "fmt"
 
-func me() (string, int) {
-	return "joao", 27
-}
-
 func main() {
-	_, idade := me()
-	fmt.Println(idade)
+	soma := func(x, y int) int {
+		return x + y
+	}
+	fmt.Println(soma(2, 3))
 }
