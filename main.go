@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	func(x, y int) {
-		fmt.Println(x + y)
-	}(2, 3)
+	var name []byte
+	name = []byte("joao")
+
+	fmt.Println(name, string(name))
 }
