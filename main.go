@@ -2,18 +2,10 @@ package main
 
 import "fmt"
 
-const (
-	Quinta = iota*2 + 1
-	Sexta
-	Sabado
-	Domingo
-	Segunda
-)
+func soma(x, y int) int {
+	return x + y
+}
 
 func main() {
-	fmt.Println(Quinta)
-	fmt.Println(Sexta)
-	fmt.Println(Sabado)
-	fmt.Println(Domingo)
-	fmt.Println(Segunda)
+	fmt.Println(soma(1, 2))
 }
