@@ -2,12 +2,10 @@ package main
 
 import "fmt"
 
-type user struct {
-	name string
-	age  int
-}
-
 func main() {
-	u := user{"joao", 27}
-	fmt.Printf("%#v", u)
+	var num [3]int
+	num[0] = 1
+	num[1] = 2
+	num[2] = 3
+	fmt.Println(num)
 }
