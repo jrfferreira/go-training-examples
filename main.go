@@ -4,7 +4,7 @@ import "fmt"
 
 func inc(x *int) {
 	*x++
-	fmt.Println(x, &x) // &x = endereco de memoria
+	fmt.Println(*x, x) // &x = endereco de memoria
 }
 
 func main() {
