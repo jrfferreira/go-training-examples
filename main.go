@@ -2,10 +2,14 @@ package main
 
 import "fmt"
 
-func soma(x, y int) int {
-	return x + y
+func inc(x int) {
+	x++
+	fmt.Println(x, &x) // &x = endereco de memoria
 }
 
 func main() {
-	fmt.Println(soma(1, 2))
+	n := 10
+	fmt.Println("antes", n, &n)
+	inc(n)
+	fmt.Println("depois", n, &n)
 }
