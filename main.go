@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 const (
-	Quinta = iota
+	Quinta = iota * 2
 	Sexta
 	Sabado
 	Domingo
