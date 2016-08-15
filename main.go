@@ -6,9 +6,7 @@ func main() {
 	numeros := []int{1, 2, 3, 4, 5}
 	outrosNumeros := []int{10, 11, 12}
 
-	for _, numero := range outrosNumeros {
-		numeros = append(numeros, numero)
-	}
+	numeros = append(numeros, outrosNumeros...)
 
 	fmt.Println(numeros)
 }
