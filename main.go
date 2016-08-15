@@ -7,6 +7,6 @@ func me() (string, int) {
 }
 
 func main() {
-	nome, _ := me()
-	fmt.Println(nome)
+	_, idade := me()
+	fmt.Println(idade)
 }
