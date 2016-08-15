@@ -8,12 +8,17 @@ type user struct {
 }
 
 func main() {
-	nomeIdade := map[string]user{}
-	nomeIdade["joao"] = user{"joao", 27}
-	nomeIdade["lorena"] = user{"lorena", 27}
-	nomeIdade["babi"] = user{"babi", 1}
-
-	for nome, idade := range nomeIdade {
-		fmt.Println(nome, idade)
+	nomeIdade := map[string]user{
+		"joao":   user{"joao", 27},
+		"lorena": user{"lorena", 27},
+		"babi":   user{"babi", 1},
 	}
+
+	for nome, u := range nomeIdade {
+		fmt.Println(nome, u)
+	}
+
+	chico, exists := nomeIdade["chico"]
+
+	fmt.Printf("%#v, exists? %v", chico, exists)
 }
