@@ -4,8 +4,13 @@ import "fmt"
 
 func inc(x *int) {
 	*x++
-	fmt.Println(*x, x) // &x = endereco de memoria
+	fmt.Println("dentro", *x, x) // &x = endereco de memoria
 }
+
+/*
+ * O ponteiro (*) traduz um endereço de memoria (&)
+ * para o valor definido
+ */
 
 func main() {
 	n := 10
