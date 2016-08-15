@@ -1,13 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
+
+type user struct {
+	name string
+	age  int
+}
 
 func main() {
-	numeroString := "10"
-
-	numero, _ := strconv.Atoi(numeroString)
-	fmt.Println(numero + 10)
+	var u user
+	u.name = "joao"
+	u.age = 27
+	fmt.Println(u, u.age, u.name)
 }
