@@ -3,13 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	num := []int{1, 2, 3, 4, 5}
+	numeros := []int{1, 2, 3, 4, 5}
+	outrosNumeros := []int{10, 11, 12}
 
-	for i, n := range num {
-		fmt.Println(i, n)
+	for _, numero := range outrosNumeros {
+		numeros = append(numeros, numero)
 	}
 
-	for i := 0; i < len(num); i++ {
-		fmt.Println(i, num[i])
-	}
+	fmt.Println(numeros)
 }
