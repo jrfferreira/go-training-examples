@@ -3,8 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	var name []byte
-	name = []byte("joao")
-
-	fmt.Println(name, string(name))
+	numero := "10"
+	fmt.Println(int(numero) + 10)
 }
