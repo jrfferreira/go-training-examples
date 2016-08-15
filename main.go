@@ -1,8 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	numero := "10"
-	fmt.Println(int(numero) + 10)
+	numeroString := "10"
+
+	numero, _ := strconv.Atoi(numeroString)
+	fmt.Println(numero + 10)
 }
