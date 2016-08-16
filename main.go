@@ -6,7 +6,15 @@ import (
 	"workshop/auth"
 )
 
+func finish() {
+	fmt.Println("fim da autenticacao")
+	if err := recover(); err != nil {
+		fmt.Println("RECOVERED!", err)
+	}
+}
+
 func main() {
-	u := auth.User{Name: "joao"}
+	defer finish()
+	u := auth.User{Name: "Lorena"}
 	fmt.Println(auth.Authenticate(u))
 }
