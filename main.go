@@ -26,8 +26,8 @@ type Walker interface {
 }
 
 type WalkerAndSpeaker interface {
-	Walk()
-	Speak()
+	Walker
+	Speaker
 }
 
 func speak(speaker Speaker) {
