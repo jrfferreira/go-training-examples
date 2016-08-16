@@ -2,21 +2,21 @@ package main
 
 import "fmt"
 
-func soma(x, y int, c chan int) {
-	c <- x + y
-
+func fibo(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i < n; i++ {
+		x, y = y, x+y
+		c <- x
+	}
+	close(c)
 }
 
 func main() {
 	c := make(chan int)
 
-	go soma(10, 1, c)
+	go fibo(10, c)
 
-	go soma(10, 2, c)
-
-	go soma(10, 3, c)
-
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
+	for n := range c {
+		fmt.Println(n)
+	}
 }
