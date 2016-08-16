@@ -1,9 +1,22 @@
 package main
 
-func soma(x, y int) int {
-	return x + y
+import "fmt"
+
+func soma(x, y int, c chan int) {
+	c <- x + y
+
 }
 
 func main() {
-	go soma(10, 1)
+	c := make(chan int)
+
+	go soma(10, 1, c)
+
+	go soma(10, 2, c)
+
+	go soma(10, 3, c)
+
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
 }
