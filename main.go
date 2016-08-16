@@ -5,16 +5,18 @@ import (
 	"time"
 )
 
-func main() {
-	c := time.Tick(1 * time.Second)
-	var x chan int
+var cities = map[string]int{}
 
-	for {
-		select {
-		case m := <-x:
-			fmt.Println(m)
-		case <-c:
-			fmt.Println("Please wait")
-		}
-	}
+func writeCities() {
+	cities["curitiba"] = 41
+	cities["rio"] = 21
+	cities["imperatriz"] = 99
+}
+
+func main() {
+	go writeCities()
+	cities["sp"] = 11
+	time.Sleep(10 * time.Second)
+
+	fmt.Println(cities)
 }
