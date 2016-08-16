@@ -1,16 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"workshop/auth"
+)
 
-type user struct {
-	name string
-}
-
-func authenticate(u user) bool {
-	return u.name == "joao"
+func authenticate(u auth.User) bool {
+	return u.Name == "joao"
 }
 
 func main() {
-	u := user{"joao"}
+	u := auth.User{"joao"}
 	fmt.Println(authenticate(u))
 }
