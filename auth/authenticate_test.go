@@ -3,13 +3,17 @@ package auth
 import "testing"
 
 func TestAuthenticate(t *testing.T) {
-	u := User{Name: "joao"}
-	if a, _ := Authenticate(u); a == false {
-		t.Error("Authenticate should return true")
+	cases := map[string]bool{
+		"joao":   true,
+		"lorena": false,
+		"babi":   false,
 	}
 
-	u2 := User{Name: "Lorena"}
-	if a, _ := Authenticate(u2); a == true {
-		t.Error("Authenticate should return false")
+	for username, expected := range cases {
+		u := User{Name: username}
+		result, _ := Authenticate(u)
+		if result != expected {
+			t.Errorf("Login to user %s should return %t, but got %t", username, expected, result)
+		}
 	}
 }
