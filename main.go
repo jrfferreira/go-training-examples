@@ -6,12 +6,15 @@ import (
 )
 
 func main() {
-	c := make(chan int)
+	c := time.Tick(1 * time.Second)
+	var x chan int
 
-	select {
-	case m := <-c:
-		fmt.Println(m)
-	case <-time.After(5 * time.Second):
-		fmt.Println("Timeout")
+	for {
+		select {
+		case m := <-x:
+			fmt.Println(m)
+		case <-c:
+			fmt.Println("Please wait")
+		}
 	}
 }
