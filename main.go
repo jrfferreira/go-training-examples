@@ -2,16 +2,28 @@ package main
 
 import "fmt"
 
-type city struct {
-	name string
-	DDD  int
+type Human struct{}
+type Cat struct{}
+
+func (Human) Speak() {
+	fmt.Println("Oi!")
 }
 
-func (c *city) show() {
-	fmt.Println("WIP ", c)
+func (Cat) Speak() {
+	fmt.Println("miau!")
+}
+
+type Speaker interface {
+	Speak()
+}
+
+func speak(speaker Speaker) {
+	speaker.Speak()
 }
 
 func main() {
-	sp := city{name: "sp", DDD: 11}
-	sp.show()
+	h := Human{}
+	c := Cat{}
+	speak(h)
+	speak(c)
 }
