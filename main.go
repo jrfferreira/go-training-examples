@@ -1,15 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"workshop/auth"
-)
+func soma(x, y int) int {
+	return x + y
+}
 
 func main() {
-	u := auth.User{Name: "Lorena"}
-	_, err := auth.Authenticate(u)
-
-	if err != nil {
-		fmt.Println(err)
-	}
+	go soma(10, 1)
 }
