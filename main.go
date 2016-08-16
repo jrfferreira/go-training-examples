@@ -2,23 +2,16 @@ package main
 
 import "fmt"
 
-type user struct {
+type city struct {
 	name string
-	age  int
+	DDD  int
+}
+
+func (c *city) show() {
+	fmt.Println("WIP ", c)
 }
 
 func main() {
-	nomeIdade := map[string]user{
-		"joao":   user{"joao", 27},
-		"lorena": user{"lorena", 27},
-		"babi":   user{"babi", 1},
-	}
-
-	for nome, u := range nomeIdade {
-		fmt.Println(nome, u)
-	}
-
-	chico, exists := nomeIdade["chico"]
-
-	fmt.Printf("%#v, exists? %v", chico, exists)
+	sp := city{name: "sp", DDD: 11}
+	sp.show()
 }
