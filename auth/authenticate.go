@@ -1,15 +1,11 @@
 package auth
 
-type InvalidUser struct{}
-
-func (InvalidUser) Error() string {
-	return "Usuário Inválido"
-}
+import "errors"
 
 // Authenticate autentica o usuario
 func Authenticate(u User) (bool, error) {
 	if u.Name != "joao" {
-		return false, &InvalidUser{}
+		return false, errors.New("Usuário Inválido")
 	}
 	return true, nil
 }
